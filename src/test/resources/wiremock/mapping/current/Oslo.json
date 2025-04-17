@@ -1,0 +1,47 @@
+{
+  "location": {
+    "name": "Oslo",
+    "region": "Oslo",
+    "country": "Norway",
+    "lat": 59.9167,
+    "lon": 10.75,
+    "tz_id": "Europe/Oslo",
+    "localtime_epoch": 1744927418,
+    "localtime": "2025-04-18 00:03"
+  },
+  "current": {
+    "last_updated_epoch": 1744927200,
+    "last_updated": "2025-04-18 00:00",
+    "temp_c": 8.3,
+    "temp_f": 46.9,
+    "is_day": 0,
+    "condition": {
+      "text": "Light rain",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/296.png",
+      "code": 1183
+    },
+    "wind_mph": 4.0,
+    "wind_kph": 6.5,
+    "wind_degree": 283,
+    "wind_dir": "WNW",
+    "pressure_mb": 1007.0,
+    "pressure_in": 29.74,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 87,
+    "cloud": 75,
+    "feelslike_c": 7.4,
+    "feelslike_f": 45.3,
+    "windchill_c": 9.7,
+    "windchill_f": 49.5,
+    "heatindex_c": 10.3,
+    "heatindex_f": 50.6,
+    "dewpoint_c": 7.8,
+    "dewpoint_f": 46.0,
+    "vis_km": 10.0,
+    "vis_miles": 6.0,
+    "uv": 0.0,
+    "gust_mph": 4.8,
+    "gust_kph": 7.7
+  }
+}

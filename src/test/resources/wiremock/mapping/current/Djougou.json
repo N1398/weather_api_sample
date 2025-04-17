@@ -1,0 +1,47 @@
+{
+  "location": {
+    "name": "Djougou",
+    "region": "Donga",
+    "country": "Benin",
+    "lat": 9.705,
+    "lon": 1.6669,
+    "tz_id": "Africa/Porto-Novo",
+    "localtime_epoch": 1744927564,
+    "localtime": "2025-04-17 23:06"
+  },
+  "current": {
+    "last_updated_epoch": 1744927200,
+    "last_updated": "2025-04-17 23:00",
+    "temp_c": 25.9,
+    "temp_f": 78.6,
+    "is_day": 0,
+    "condition": {
+      "text": "Clear",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
+      "code": 1000
+    },
+    "wind_mph": 4.9,
+    "wind_kph": 7.9,
+    "wind_degree": 221,
+    "wind_dir": "SW",
+    "pressure_mb": 1011.0,
+    "pressure_in": 29.87,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 66,
+    "cloud": 14,
+    "feelslike_c": 27.4,
+    "feelslike_f": 81.3,
+    "windchill_c": 25.9,
+    "windchill_f": 78.6,
+    "heatindex_c": 27.4,
+    "heatindex_f": 81.3,
+    "dewpoint_c": 19.0,
+    "dewpoint_f": 66.2,
+    "vis_km": 10.0,
+    "vis_miles": 6.0,
+    "uv": 0.0,
+    "gust_mph": 10.2,
+    "gust_kph": 16.4
+  }
+}

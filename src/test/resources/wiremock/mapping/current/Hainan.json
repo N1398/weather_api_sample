@@ -1,0 +1,47 @@
+{
+  "location": {
+    "name": "Hainan",
+    "region": "Hainan",
+    "country": "China",
+    "lat": 18.9394,
+    "lon": 109.4842,
+    "tz_id": "Asia/Shanghai",
+    "localtime_epoch": 1744926564,
+    "localtime": "2025-04-18 05:49"
+  },
+  "current": {
+    "last_updated_epoch": 1744926300,
+    "last_updated": "2025-04-18 05:45",
+    "temp_c": 21.4,
+    "temp_f": 70.6,
+    "is_day": 0,
+    "condition": {
+      "text": "Fog",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/248.png",
+      "code": 1135
+    },
+    "wind_mph": 2.2,
+    "wind_kph": 3.6,
+    "wind_degree": 146,
+    "wind_dir": "SSE",
+    "pressure_mb": 1009.0,
+    "pressure_in": 29.79,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 99,
+    "cloud": 100,
+    "feelslike_c": 21.4,
+    "feelslike_f": 70.6,
+    "windchill_c": 21.4,
+    "windchill_f": 70.6,
+    "heatindex_c": 24.3,
+    "heatindex_f": 75.7,
+    "dewpoint_c": 21.3,
+    "dewpoint_f": 70.3,
+    "vis_km": 0.0,
+    "vis_miles": 0.0,
+    "uv": 0.0,
+    "gust_mph": 3.2,
+    "gust_kph": 5.1
+  }
+}

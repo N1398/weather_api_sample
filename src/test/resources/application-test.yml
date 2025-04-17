@@ -1,0 +1,11 @@
+server:
+  port: 0
+
+wiremock:
+  port: 8089
+  mappings-path: classpath:wiremock/mappings
+
+weather:
+  api:
+    base-url: http://localhost:${wiremock.port}
+    key: test-api-key

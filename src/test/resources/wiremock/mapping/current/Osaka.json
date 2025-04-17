@@ -1,0 +1,47 @@
+{
+  "location": {
+    "name": "Osaka-Shi",
+    "region": "Osaka",
+    "country": "Japan",
+    "lat": 34.6937,
+    "lon": 135.5022,
+    "tz_id": "Asia/Tokyo",
+    "localtime_epoch": 1744927340,
+    "localtime": "2025-04-18 07:02"
+  },
+  "current": {
+    "last_updated_epoch": 1744927200,
+    "last_updated": "2025-04-18 07:00",
+    "temp_c": 17.2,
+    "temp_f": 63.0,
+    "is_day": 1,
+    "condition": {
+      "text": "Sunny",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+      "code": 1000
+    },
+    "wind_mph": 2.2,
+    "wind_kph": 3.6,
+    "wind_degree": 40,
+    "wind_dir": "NE",
+    "pressure_mb": 1014.0,
+    "pressure_in": 29.94,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 83,
+    "cloud": 0,
+    "feelslike_c": 17.2,
+    "feelslike_f": 63.0,
+    "windchill_c": 16.7,
+    "windchill_f": 62.0,
+    "heatindex_c": 16.7,
+    "heatindex_f": 62.0,
+    "dewpoint_c": 11.5,
+    "dewpoint_f": 52.7,
+    "vis_km": 10.0,
+    "vis_miles": 6.0,
+    "uv": 0.4,
+    "gust_mph": 3.4,
+    "gust_kph": 5.4
+  }
+}

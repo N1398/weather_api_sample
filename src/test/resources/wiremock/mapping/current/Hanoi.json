@@ -1,0 +1,36 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPath": "/v1/current.json",
+        "queryParameters": {
+            "q": {
+                "equalTo": "Hanoi"
+            },
+            "key": {
+                "equalTo": "test-api-key"
+            }
+        }
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {
+            "location": {
+                "name": "Hanoi",
+                "country": "Vietnam",
+                "lat": 21.0333,
+                "lon": 105.85
+            },
+            "current": {
+                "temp_c": 24.4,
+                "temp_f": 75.9,
+                "condition": {
+                    "text": "Mist",
+                    "code": 1030
+                }
+            }
+        }
+    }
+}

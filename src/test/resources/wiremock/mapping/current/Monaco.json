@@ -1,0 +1,47 @@
+{
+  "location": {
+    "name": "Monaco-Ville",
+    "region": "",
+    "country": "Monaco",
+    "lat": 43.733,
+    "lon": 7.417,
+    "tz_id": "Europe/Monaco",
+    "localtime_epoch": 1744926673,
+    "localtime": "2025-04-17 23:51"
+  },
+  "current": {
+    "last_updated_epoch": 1744926300,
+    "last_updated": "2025-04-17 23:45",
+    "temp_c": 14.3,
+    "temp_f": 57.7,
+    "is_day": 0,
+    "condition": {
+      "text": "Partly cloudy",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png",
+      "code": 1003
+    },
+    "wind_mph": 3.4,
+    "wind_kph": 5.4,
+    "wind_degree": 200,
+    "wind_dir": "SSW",
+    "pressure_mb": 1008.0,
+    "pressure_in": 29.77,
+    "precip_mm": 0.21,
+    "precip_in": 0.01,
+    "humidity": 82,
+    "cloud": 75,
+    "feelslike_c": 14.5,
+    "feelslike_f": 58.2,
+    "windchill_c": 13.6,
+    "windchill_f": 56.5,
+    "heatindex_c": 13.5,
+    "heatindex_f": 56.3,
+    "dewpoint_c": 11.6,
+    "dewpoint_f": 52.9,
+    "vis_km": 10.0,
+    "vis_miles": 6.0,
+    "uv": 0.0,
+    "gust_mph": 4.1,
+    "gust_kph": 6.6
+  }
+}
