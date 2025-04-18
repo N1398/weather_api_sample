@@ -1,74 +1,34 @@
 plugins {
     id 'java'
     id 'groovy'
-    id 'org.springframework.boot' version '3.1.5'
-    id 'io.spring.dependency-management' version '1.1.3'
-    id 'io.qameta.allure' version '2.11.2'
 }
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
+
 repositories {
     mavenCentral()
-    maven { url 'https://repo.maven.apache.org/maven2' }
-    maven { url 'https://repository.apache.org/content/repositories/snapshots/' }
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-}
-
-allure {
-    version = '2.23.0'
-    adapter {
-        autoconfigure = true
-        aspectjWeaver = true
-        frameworks {
-            spock {
-                adapterVersion = '2.23.0'
-            }
-        }
-    }
-}
-
-configurations.all {
-    resolutionStrategy {
-        force 'org.apache.groovy:groovy:4.0.13'
-        force 'org.apache.groovy:groovy-json:4.0.13'
-        force 'org.apache.groovy:groovy-xml:4.0.13'
-    }
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
-    // Тестовые зависимости
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.spockframework:spock-spring:2.3-groovy-4.0'
+    // Основные зависимости
+    implementation 'org.codehaus.groovy:groovy-all:3.0.9'
 
-    testImplementation 'io.rest-assured:rest-assured:5.3.0'
-    //testImplementation 'io.qameta.allure:allure-spock:2.24.0'
-    //testImplementation 'io.qameta.allure:allure-rest-assured:2.23.0'
-    testImplementation 'org.aspectj:aspectjweaver:1.9.19'
+    // Spock Framework
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
 
-    testImplementation 'org.springframework:spring-test'
-    testImplementation 'org.apache.groovy:groovy:4.0.13'
-    testImplementation 'org.apache.groovy:groovy-json:4.0.13'
-    testImplementation 'org.apache.groovy:groovy-xml:4.0.13'
+    // WireMock
+    implementation 'com.github.tomakehurst:wiremock-jre8:2.32.0'
+
+    // Spring (для аннотаций)
+    implementation 'org.springframework.boot:spring-boot-starter:2.7.0'
+    implementation 'jakarta.annotation:jakarta.annotation-api:2.1.0'
+
+    // JSON обработка
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+
+    // Spock Reports
+    testImplementation 'com.athaydes:spock-reports:2.0-RC2'
 }
 
 test {
     useJUnitPlatform()
-    systemProperty 'allure.results.directory', "$buildDir/allure-results"
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
-    finalizedBy 'allureReport'
-}
-
-allureReport {
-    dependsOn test
-}
-
-allureServe {
-    dependsOn allureReport
+    systemProperty 'com.athaydes.spockframework.report.outputDir', 'build/spock-reports'
 }

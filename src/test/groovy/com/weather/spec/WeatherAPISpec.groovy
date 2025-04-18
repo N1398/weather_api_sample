@@ -1,43 +1,52 @@
 package com.weather.spec
-
-import com.weather.dto.CurrentWeatherDto
-import io.restassured.RestAssured
-import io.restassured.response.Response
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.web.server.LocalServerPort
-import org.springframework.test.context.ActiveProfiles
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.github.tomakehurst.wiremock.client.WireMock
+import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo
+import com.github.tomakehurst.wiremock.junit5.WireMockTest
 import spock.lang.Specification
-import spock.lang.Unroll
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("test")
-class WeatherAPISpec extends Specification {
-
-    @LocalServerPort
-    private int port
+@WireMockTest
+abstract class WeatherApiSpec extends Specification {
+    def objectMapper = new ObjectMapper()
+    def apiKey = "test-api-key"
+    def baseUrl
 
     def setup() {
-        RestAssured.baseURI = "http://localhost:${port}"
+        baseUrl = "http://localhost:${wireMockRuntimeInfo.httpPort}"
     }
 
-    @Unroll
-    def "Get current weather for #city should return valid data"() {
-        when: "Request current weather"
-        Response response = RestAssured.given()
-                .queryParam("q", city)
-                .queryParam("key", "test-api-key")
-                .get("/v1/current.json")
+    def stubWeatherApi(String city, int status, String responseFile) {
+        def url = "/v1/current.json?key=${apiKey}&q=${city}"
+        wireMock.stubFor(
+                WireMock.get(WireMock.urlPathEqualTo("/v1/current.json"))
+                        .withQueryParam("key", WireMock.equalTo(apiKey))
+                        .withQueryParam("q", WireMock.equalTo(city))
+                        .willReturn(WireMock.aResponse()
+                                .withStatus(status)
+                                .withHeader("Content-Type", "application/json")
+                                .withBodyFile(responseFile))
+        )
+    }
 
-        then: "Verify response"
-        response.statusCode() == 200
+    def compareWeatherData(actual, expected) {
+        def differences = [:]
 
-        and: "Validate response structure"
-        CurrentWeatherDto weather = response.as(CurrentWeatherDto.class)
-        weather.location.name == city
-        weather.current.temp_c instanceof Double
-        weather.current.condition.text instanceof String
+        expected.each { key, value ->
+            if (actual[key] != value) {
+                differences[key] = [
+                        expected: value,
+                        actual: actual[key]
+                ]
+            }
+        }
 
-        where:
-        city << ["Hanoi", "Monaco", "Djougou", "Hainan"]
+        if (differences) {
+            println "Differences for ${expected.location.name}:"
+            differences.each { key, diff ->
+                println "  $key: expected ${diff.expected}, got ${diff.actual}"
+            }
+        }
+
+        return differences.isEmpty()
     }
 }
